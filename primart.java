@@ -435,8 +435,18 @@ public class PriMart {
                         int productStocks = 0;
 
                         System.out.println();
-                        System.out.print("Enter Product Name: ");
-                        productName = sc.nextLine();
+                        productName = "";
+                        boolean boolProductName = false;
+                        while (!boolProductName) {
+                            System.out.print("Enter Product Name: ");
+                            productName = sc.nextLine();
+                            if (productName.length() < 3) {
+                                System.out.println("ERROR: Product Name should be at least 3 letters long");
+                                System.out.println();
+                            } else {
+                                boolProductName = true;
+                            }
+                        }
 
                         boolean boolProductPrice = false;
                         productPrice = 0;
@@ -458,6 +468,9 @@ public class PriMart {
                             productCategory = sc2.nextLine();
                             if (productCategory.matches(".*\\d.*")) {
                                 System.out.println("ERROR: Product Category should not contain numerical characters!");
+                                System.out.println();
+                            } else if (productCategory.length() < 3) {
+                                System.out.println("ERROR: Product Category should be at least 3 letters long");
                                 System.out.println();
                             } else {
                                 boolProductCategory = true;
@@ -502,6 +515,8 @@ public class PriMart {
                             productDescription = sc2.nextLine();
                             if (productDescription.length() > 45) {
                                 System.out.println("ERROR: Product Description should not exceed 45 characters!");
+                            } else if (productDescription.length() < 3) {
+                                System.out.println("ERROR: Product Description should be at least 3 letters long");
                             } else {
                                 boolProductDescrip = true;
                             }
