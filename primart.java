@@ -13,6 +13,7 @@ public class PriMart {
         Scanner sc = new Scanner(System.in);
         Scanner sc2 = new Scanner(System.in);
         Scanner sc3 = new Scanner(System.in);
+        Scanner sc4 = new Scanner(System.in);
 
         // Declare Account Variables to avoid error when accessing
         String firstName = ""; String lastName = ""; String accountName = "";
@@ -439,7 +440,7 @@ public class PriMart {
                         boolean boolProductName = false;
                         while (!boolProductName) {
                             System.out.print("Enter Product Name: ");
-                            productName = sc.nextLine();
+                            productName = sc4.nextLine();
                             if (productName.length() < 3) {
                                 System.out.println("ERROR: Product Name should be at least 3 letters long");
                                 System.out.println();
@@ -465,7 +466,7 @@ public class PriMart {
                         productCategory = "";
                         while (!boolProductCategory) {
                             System.out.print("Enter Product Category: ");
-                            productCategory = sc2.nextLine();
+                            productCategory = sc4.nextLine();
                             if (productCategory.matches(".*\\d.*")) {
                                 System.out.println("ERROR: Product Category should not contain numerical characters!");
                                 System.out.println();
